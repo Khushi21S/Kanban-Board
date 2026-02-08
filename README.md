@@ -1,16 +1,15 @@
-# React + Vite
+# 🗂️ Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal Kanban Board built with React and Tailwind CSS to manage tasks across workflow stages.
 
-Currently, two official plugins are available:
+**Features:** Three columns (To Do, In Progress, Done), add cards via modal (title required), delete cards with confirmation, task count per column, draggable cards, responsive UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Tech Stack:** React, JavaScript (ES6), Tailwind CSS, HTML Drag & Drop API, Lucide Icons.
 
-## React Compiler
+**State Management:** Global state using React Context with localStorage persistence to retain data on refresh.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Future Enhancements:** Full drag-and-drop updates, edit cards, priority tags, backend integration.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import KanbanColumn from "./kanbanBoard/KanbanColumn";
 import AddCardModal from "./kanbanBoard/AddCardModal";
 import { KANBAN_COLUMNS } from "../utils/data";
@@ -32,8 +32,27 @@ const KanbanBoardComponent = () => {
     setCards((prev) => prev.filter((card) => card.id !== cardToDelete));
     setIsDeleteModalOpen(false);
     setCardToDelete(null);
-    console.log(cards);
   };
+
+const handleDropCard = (e, targetColumnId) => {
+  e.preventDefault();
+
+  const cardId = e.dataTransfer.getData("text/plain");
+  if (!cardId) return;
+
+  setCards((prev) =>
+    prev.map((card) =>
+      card.id === cardId
+        ? { ...card, columnId: targetColumnId } // ✅ MUST be columnId
+        : card
+    )
+  );
+};
+
+const handleDragStart = (e, cardId) => {
+  e.dataTransfer.setData("cardId", cardId);
+};
+
 
   return (
     <>
@@ -55,6 +74,8 @@ const KanbanBoardComponent = () => {
                 setActiveColumn(colId);
                 setIsModalOpen(true);
               }}
+                onDragStart={handleDragStart}
+  onDropCard={handleDropCard}
             />
           );
         })}
