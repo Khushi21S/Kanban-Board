@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import KanbanColumn from "./kanbanBoard/KanbanColumn";
 import AddCardModal from "./kanbanBoard/AddCardModal";
 import { KANBAN_COLUMNS } from "../utils/data";
-import { useKanban } from "../contexts/KanbanContext";
+import {useKanban} from "../contexts/useKanban";
 import DeleteCardModal from "./kanbanBoard/DeleteCardModal";
 
 const KanbanBoardComponent = () => {
