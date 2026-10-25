@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { cardData } from "../utils/data";
 
-const KanbanContext = createContext();
+import { useEffect, useState } from "react";
+import KanbanContext from "./kanbanContext";
+import { cardData } from "../utils/data";
 
 export const KanbanProvider = ({ children }) => {
   const [cards, setCards] = useState(() => {
@@ -20,4 +20,4 @@ export const KanbanProvider = ({ children }) => {
   );
 };
 
-export const useKanban = () => useContext(KanbanContext);
+export default KanbanProvider;
